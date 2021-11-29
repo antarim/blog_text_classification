@@ -15,10 +15,10 @@ parser.add_argument('post')
 articles = ['business', 'entertainment', 'politics', 'sport', 'tech']
 
 # load vectorizer
-vectorizer = pickle.load(open("../model/vectorizer.pickle", 'rb'))
+vectorizer = pickle.load(open("model/vectorizer.pickle", 'rb'))
 
 # load model
-with open('../model/text_classifier', 'rb') as training_model:
+with open('model/text_classifier', 'rb') as training_model:
     model = pickle.load(training_model)
 
 
@@ -36,5 +36,3 @@ class PredictTheme(Resource):
 
 api.add_resource(PredictTheme, '/')
 
-if __name__ == '__main__':
-    app.run(debug=True)
